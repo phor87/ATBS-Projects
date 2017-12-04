@@ -1,11 +1,4 @@
 """
-
-  Collatz sequence, sometimes called “the simplest impossible math problem.”)
-
-Remember to convert the return value from input() to an integer with the int() function; otherwise, it will be a string value.
-
-Hint: An integer number is even if number % 2 == 0, and it’s odd if number % 2 == 1.
-
 The output of this program could look something like this:
 
 Enter number:
@@ -25,3 +18,25 @@ Add try and except statements to the previous project to detect whether the user
 
 #TODO def collatz(number) if number is even, then collatz() should print number // 2 and return this value.
 #TODO If number is odd, then collatz() should print and return 3 * number + 1.
+
+def collatz(number):
+    while True:
+        if number % 2 == 0:
+            #number is even.
+            print(number)
+            number = number // 2
+            continue
+        elif number % 2 == 1:
+            #number is odd
+            print(number)
+            number = 3 * number + 1
+            if number == 4:
+                break
+            continue
+
+
+user_number = int(input('Enter number: '))
+
+collatz(user_number)
+
+
