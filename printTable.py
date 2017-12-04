@@ -29,15 +29,16 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 def printTable(table):
+    colWidths = [0] * len(table)
 
 
-
-    y = 0
-    while y != len(table[0]):
-        for i in range(len(table)):
-            print(table[i][y].rjust(10), end='')
-
-        y += 1
+    for u in range(len(colWidths)):
+        for i in table[u]:
+            if len(i) > colWidths[u]:
+                colWidths[u] = len(i)
+    for e in range(len(table[0])):
+        for n in range(len(table)):
+            print(table[n][e].rjust(colWidths[n]), end=' ')
         print()
 
 printTable(tableData)
